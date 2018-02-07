@@ -115,7 +115,7 @@ function setGamePoints() {
     computerPointsElem.innerHTML = computer.score;
 }
 
-//// Końcówka
+//// Koniec
 
 if (computer.score >= 10 || player.score >= 10) {
         if (player.score > computer.score) {
