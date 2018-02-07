@@ -52,7 +52,7 @@ function newGame() {
     setGameElements();
 
     playerNameElem.innerHTML = player.name;
-    // setGamePoints(); // This function has not been created yet
+ setGamePoints();
   }
 }
 
@@ -101,25 +101,25 @@ function checkRoundWinner(playerPick, computerPick) {
     }
 }
 
-function playerPick(playerPick) {
+/*function playerPick(playerPick) {
     var computerPick = getComputerPick();
 
     playerPickElem.innerHTML = playerPick;
     computerPickElem.innerHTML = computerPick;
 
     checkRoundWinner(playerPick, computerPick);
-}
+} */
 
 function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
     computerPointsElem.innerHTML = computer.score;
-}
 
-//// Koniec
-
-if (computer.score >= 10 || player.score >= 10) {
+ 	if (computer.score >= 10 || player.score >= 10) {
         if (player.score > computer.score) {
             alert("Win " + player.name + "!")
         } else {
             alert("Win computer!");
+        }
+    }
+    setGamePoints();
 }
