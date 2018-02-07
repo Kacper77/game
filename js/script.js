@@ -56,11 +56,6 @@ function newGame() {
   }
 }
 
-function playerPick(playerPick) {
-    console.log(playerPick);
-}
-Math.floor(Math.random()*3)
-
 function getComputerPick() {
     var possiblePicks = ['rock', 'paper', 'scissors'];
     return possiblePicks[Math.floor(Math.random()*3)];
@@ -70,12 +65,6 @@ var playerPickElem = document.getElementById('js-playerPick'),
     computerPickElem = document.getElementById('js-computerPick'),
     playerResultElem = document.getElementById('js-playerResult'),
     computerResultElem = document.getElementById('js-computerResult');
-function playerPick(playerPick) {
-    var computerPick = getComputerPick();
-
-    playerPickElem.innerHTML = playerPick;
-    computerPickElem.innerHTML = computerPick;
-}
 
 function checkRoundWinner(playerPick, computerPick) {
 	playerResultElem.innerHTML = computerResultElem.innerHTML = '';
@@ -99,16 +88,17 @@ function checkRoundWinner(playerPick, computerPick) {
         computerResultElem.innerHTML = "Win!";
         computer.score++;
     }
+    setGamePoints();
 }
 
-/*function playerPick(playerPick) {
+function playerPick(playerPick) {
     var computerPick = getComputerPick();
 
     playerPickElem.innerHTML = playerPick;
     computerPickElem.innerHTML = computerPick;
 
     checkRoundWinner(playerPick, computerPick);
-} */
+} 
 
 function setGamePoints() {
     playerPointsElem.innerHTML = player.score;
@@ -120,6 +110,8 @@ function setGamePoints() {
         } else {
             alert("Win computer!");
         }
+        gameState = 'ended';
+        setGameElements();
     }
-    setGamePoints();
 }
+   
